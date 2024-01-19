@@ -138,11 +138,11 @@ public class ChoreController : ControllerBase
 
     //this allows an admin to assign a chore to a user
     [HttpPost("{id}/assign")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public IActionResult AssignChore (int id, int? userId)
     {
         Chore chosenChore = _dbContext.Chores.FirstOrDefault(c => c.Id == id);
-        UserProfile chosenUser = _dbContext.UserProfiles.FirstOrDefault(u => u.Id == id);
+        UserProfile chosenUser = _dbContext.UserProfiles.FirstOrDefault(u => u.Id == userId);
 
         if(chosenChore == null || chosenUser == null)
         {
@@ -162,7 +162,7 @@ public class ChoreController : ControllerBase
 
     //this allows an admin to unassign a chore to a user
     [HttpPost("{id}/unassign")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public IActionResult UnassignChore (int id, int? userId)
     {
         ChoreAssignment chosenChoreAssignment = _dbContext.ChoreAssignments
