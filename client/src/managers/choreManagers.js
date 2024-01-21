@@ -5,7 +5,9 @@ export const getChores = () => {
 }
 
 export const deleteChore = (id) => {
-    return fetch(`${_apiUrl}/${id}`).then(res => res.json())
+  return fetch(`${_apiUrl}/${id}`, {
+    method: "DELETE"
+  })
 }
 
 export const getChoreById = (id) => {

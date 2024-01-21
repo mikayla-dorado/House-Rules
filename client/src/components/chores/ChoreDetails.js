@@ -129,7 +129,7 @@ export const ChoreDetails = () => {
       <h2>Chore Details</h2>
       <Form className="chore-details">
         <FormGroup>
-          <Label>Name</Label>
+          <Label>Name:</Label>
           <Input
             type="text"
             name="name"
@@ -143,7 +143,7 @@ export const ChoreDetails = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label>Difficulty</Label>
+          <Label>Difficulty:</Label>
           <Input
             type="text"
             name="difficulty"
@@ -157,7 +157,7 @@ export const ChoreDetails = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label>Frequency</Label>
+          <Label>Frequency:</Label>
           <Input
             type="text"
             name="choreFrequencyDays"
@@ -171,7 +171,7 @@ export const ChoreDetails = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label>Current Assignees</Label>
+          <Label>Current Assignees:</Label>
           {users.map(u => {
             return (
               <div key={u.id}>
@@ -188,11 +188,11 @@ export const ChoreDetails = () => {
           })}
         </FormGroup>
         <FormGroup>
-          <Label>Most Recent Completion</Label>
+          <Label>Most Recent Completion:</Label>
           <div>{mostRecentCompletionDate ? mostRecentCompletionDate.toISOString().slice(0, 10) : ''}</div>
         </FormGroup>
       </Form>
-      <Button color="danger" onClick={event => handleSubmitBtn(event)}>Submit</Button>
+      <Button color="success" onClick={event => handleSubmitBtn(event)}>Submit</Button>
     </>
   )
 }

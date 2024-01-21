@@ -72,7 +72,7 @@ public class ChoreController : ControllerBase
     public IActionResult CompleteChore(int id, UserProfile user)
     {
         Chore foundChore = _dbContext.Chores.FirstOrDefault(c => c.Id == id);
-        UserProfile foundUser = _dbContext.UserProfiles.FirstOrDefault(u => u.Id == id);
+        UserProfile foundUser = _dbContext.UserProfiles.FirstOrDefault(u => u.Id == user.Id);
         if (foundChore == null || foundUser == null)
         {
             return NotFound();

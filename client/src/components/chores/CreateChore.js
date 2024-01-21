@@ -14,7 +14,7 @@ export const CreateChore = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     
-    const choreToSubmit = {
+    const choreCreated = {
       name: name,
       choreFrequencyDays: parseInt(choreFrequencyDays),
       difficulty: parseInt(difficulty),
@@ -22,7 +22,7 @@ export const CreateChore = () => {
       choreAssignments: []
     }
     
-    createChore(choreToSubmit).then((res) => {
+    createChore(choreCreated).then((res) => {
       if (res.errors) {
         setErrors(res.errors)
       } else {
